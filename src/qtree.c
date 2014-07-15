@@ -17,21 +17,12 @@
 
 #include "quadify.h"
 
-void quadify(IplImage* img){
-      for (int y = 0; y < src->height; y++) {
-        uchar* ptr = (uchar*) (src->imageData + y * src->widthStep);
-        for (int x = 0; x < src->width; x++) {
-            Node* current_node = overlay->nodes[x + (y * src->width)];
-            current_node->color = BLACK;
-            if (!(ptr[3 * x + 1] < threshold->HT
-                        && ptr[3 * x + 3] < threshold->VT)) {
-                ptr[3 * x + 1] = 255; //Color the pixel white
-                ptr[3 * x + 2] = 255;
-                ptr[3 * x + 3] = 255;
-                current_node->red = 1; //Set node as red
-            } else {
-                current_node->red = 0;
-            }
-        }
-    }
+Q_tree* init(){
+    Q_tree* qtree = malloc(sizeof(Q_tree));
+    qtree->size = 0;
+    qtree->depth = 0;
+
+    qtree->root = 0;
 }
+
+void insert(){}

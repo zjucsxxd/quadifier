@@ -32,8 +32,8 @@
 int run(char* path){
     cvNamedWindow("Show", CV_WINDOW_AUTOSIZE);
     IplImage* img = cvLoadImage(path, 1);
-        cvShowImage("Show", img);
         quadify(img);
+        cvShowImage("Show", img);
         cvWaitKey(0);
         cvReleaseImage(&img);
     return 0;

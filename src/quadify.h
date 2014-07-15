@@ -30,7 +30,21 @@
 
 #include "highgui.h"
 #include "cv.h"
+#include "qtree.h"
 
+typedef struct{
+    int sx; //Start position in global image
+    int sy;
+    int x; //Dimension of section
+    int y;
+
+    int b; //bitwise pattern to repeat
+    int g; //bitwise pattern to repeat
+    int r; //bitwise pattern to repeat
+} Section;
+
+void paint(Q_tree*);
+int classify(Section*, IplImage*, int);
 void quadify(IplImage*);
 #endif
 

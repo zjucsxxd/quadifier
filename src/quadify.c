@@ -16,22 +16,26 @@
 
 
 #include "quadify.h"
+#include <math.h>
+
+void modify(Section* sec, IplImage* img, )
+
+/* Returns 1 if branching is required
+*/
+int classify(Section* sec, IplImage* img, int dist){
+}
+
+void branch(Section* sec){
+
+}
 
 void quadify(IplImage* img){
-      for (int y = 0; y < src->height; y++) {
-        uchar* ptr = (uchar*) (src->imageData + y * src->widthStep);
-        for (int x = 0; x < src->width; x++) {
-            Node* current_node = overlay->nodes[x + (y * src->width)];
-            current_node->color = BLACK;
-            if (!(ptr[3 * x + 1] < threshold->HT
-                        && ptr[3 * x + 3] < threshold->VT)) {
-                ptr[3 * x + 1] = 255; //Color the pixel white
-                ptr[3 * x + 2] = 255;
-                ptr[3 * x + 3] = 255;
-                current_node->red = 1; //Set node as red
-            } else {
-                current_node->red = 0;
-            }
-        }
-    }
+    Section* testsec = malloc(sizeof(Section));
+    testsec->sx = 0;
+    testsec->sy = 0;
+    testsec->x = img->width;
+    testsec->y = img->height;
+    printf("%d %d\n", testsec->x, testsec->y);
+        //classify(testsec, img, );
 }
+
